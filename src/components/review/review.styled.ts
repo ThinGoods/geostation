@@ -1,23 +1,23 @@
 import styled from "styled-components"
 import { colors } from "../../utils/colors"
-import { font } from "../../utils/styles"
+import { flex, font } from "../../utils/styles"
+
 
 const CardContainer = styled.div`
   background-color: ${colors.grey};
   margin: 0 auto;
   width: 60%;
-  display: flex;
-  flex-direction: column;
+  ${flex('column')}
   border-radius: 15px;
   padding: 10px;
 `
+
 const HeadCard = styled.div`
+  width: 100%;
   padding: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  ${flex('row', 'center', 'space-between')};
 `
+
 
 const Username = styled.div`
   ${font(colors.dark, 25, 500 )}
@@ -30,6 +30,7 @@ const NameContainer = styled.div`
 
 const ReviewBody = styled.div`
   ${font(colors.dark, 15, 600)}
+  width: 100%;
   margin-bottom: 10px;
   padding-left: 8px;
 `

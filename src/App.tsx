@@ -1,11 +1,8 @@
 import { PicturesTable } from './components/pictureTable/pictureTable'
 import { sourceImg } from './importsOfPictures';
-import './App.css';
-import {Review} from './components/review/review'
+import { Review } from './components/review/review'
 
-
-
-function App() {
+const App = () => {
   return (
     <div>
       <Review />
@@ -13,4 +10,6 @@ function App() {
     </div>
   );
 }
+
+
 export default App;

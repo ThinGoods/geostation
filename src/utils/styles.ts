@@ -1,29 +1,7 @@
 import { colors } from "./colors";
+import { IFlex, IFont, TFontDictionary } from "./styles.types";
 
 const FONT_NAME = "Montserrat";
-interface IFont {
-  (
-    color?: string,
-    size?: number,
-    weight?: TFontWeight,
-  ): string
-}
-
-type TFontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-type TFontName = 
-| 'Thin' 
-| 'ExtraLight' 
-| 'Light' 
-| 'Regular' 
-| 'Medium' 
-| 'SemiBold' 
-| 'Bold' 
-| 'ExtraBold' 
-| 'Black';
-
-type TFontDictionary = {
-  [prop in TFontWeight]: TFontName
-}
 
 const fontDictionary: TFontDictionary = {
   100: 'Thin',
@@ -43,5 +21,16 @@ export const font: IFont = (color = colors.dark, size = 14, weight = 400) => {
   font-family: "${FONT_NAME}${fontDictionary[weight]}";
   color: ${color};
   font-size: ${size}px;
+  `
+}
+
+export const flex: IFlex = (direction = 'row', align = 'center', justify = 'center', wrap = 'nowrap') => {
+  return `
+  display: flex;
+  flex-direction: ${direction};
+  align-items: ${align};
+  justify-content: ${justify};
+  flex-wrap: ${wrap};
+  
   `
 }

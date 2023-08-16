@@ -1,12 +1,10 @@
 import styled from "styled-components"
 import { colors } from "../../utils/colors"
-import { font } from "../../utils/styles"
+import { flex, font } from "../../utils/styles"
 
 const RateContainer = styled.div`
     background-color: ${colors.yellowGreen};
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    ${flex('row', 'center', 'space-around')}
     padding: 10px;
     border-radius: 15px;
 `
